@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>logueo</title>
+        <link href="CSS/login.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h:form id="miIdioma">
+                                <h:panelGrid columns="2"></h:panelGrid>
+                                <h:outputLabel value="Elija Idioma"></h:outputLabel>
+                            <h:selectOneMenu onchange="this.form.submit()"
+                                             valueChangeListener="#{managedAdmin.mostrarIdioma}">
+                                <f:selectItem itemLabel="Español" itemValue="es"></f:selectItem>
+                                <f:selectItem itemLabel="Ingles" itemValue="en"></f:selectItem>
+                                <f:selectItem itemLabel="Italiano" itemValue="it"></f:selectItem>
+                            </h:selectOneMenu>
+                                </h:form>
+                <div id="contenedor">
+                    <div id="contenedorcentrado">
+                        <div id="login">
+                            <h:form id="loginform">
+                              <h:panelGrid columns="2">  
+                      <h:outputLabel value= "#{txt['logueo.Usuario']}"></h:outputLabel>
+                    <h:inputText value="#{managedAdmin.administrador.nomadm}"></h:inputText>
+                <h:outputLabel value= "#{txt['logueo.Contraseña']}"></h:outputLabel>
+                <h:inputSecret value="#{managedAdmin.administrador.pasadm}"></h:inputSecret>
+                    <h:commandButton value="#{txt['logueo.IniciarSesion']} " action="#{managedAdmin.validarAdministrador()}">
+                    </h:commandButton>
+            </h:panelGrid>    
+
+                            </h:form>
+                              </div>
+                        <div  id="derecho">
+                            <div class="titulo">
+                              <h:outputLabel value="#{txt['logueo']}"></h:outputLabel>
+
+                            </div>
+                            <div class="pie-form">
+                              <h:outputLabel value="#{txt['logueo.Notienesunacuenta']}"></h:outputLabel>
+                            <p> <a href="Usuario/agregar.xhtml" class="blue">
+                                     <h:outputLabel value="#{txt['logueo.Registrarme']}"></h:outputLabel>
+                                    </a><span class="fontawesome-arrow-right"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+    </h:body>
+</html>
+
